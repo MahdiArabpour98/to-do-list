@@ -1,6 +1,28 @@
+import { useState } from "react";
 import "./Header.css";
+import { addItem } from "../../redux/todolist";
+import { useDispatch } from "react-redux";
 
 const Header = () => {
+
+  const dispatch = useDispatch()
+
+  const [searchValue, setSearchValue] = useState("")
+
+  const handleChange = (event) => {
+    setSearchValue(event.target.value)
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (searchValue.trim() !== "") {
+      dispatch(addItem(searchValue.trim()))
+      setSearchValue("")
+    } else {
+      return
+    }
+  }
+
   return (
     <div className="w-full bg-light-brown rounded-t-lg pt-12 flex flex-col items-center pb-8">
       <div className="">
@@ -9,14 +31,14 @@ const Header = () => {
         </p>
       </div>
       <div className="w-full mt-6">
-        <form className="" onSubmit={() => { }}>
+        <form className="" onSubmit={handleSubmit}>
           <div className="flex flex-col justify-center items-center md:flex md:flex-row md:items-center mb-6">
             <div className="">
               <input className="w-60 sm:w-96 bg-second-white appearance-none border-2 rounded md:rounded-r-none py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-btn-background"
                 type="text"
-                value=""
+                value={searchValue}
                 placeholder="Title..."
-                onChange={() => { }}
+                onChange={handleChange}
               />
             </div>
             <div className="">
