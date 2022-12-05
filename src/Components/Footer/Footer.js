@@ -1,4 +1,3 @@
-import "./Footer.css";
 import { clearCompleted } from "../../redux/todolist";
 import { useDispatch } from "react-redux";
 
@@ -15,7 +14,7 @@ const Footer = ({ itemsLeft, allOrActive, handleActiveOrAll }) => {
         <p className={`${allOrActive === "Active" && 'font-bold'} cursor-pointer`} onClick={() => handleActiveOrAll("Active")}>Active</p>
       </div>
       <div className="">
-        <button className="shadow bg-btn-background hover:bg-slate-400 hover:text-second-white text-light-brown py-1 px-3 rounded border border-light-brown text-xs"
+        <button className="shadow bg-btn-background hover:bg-slate-400 hover:text-second-white text-light-brown py-1 px-3 rounded border border-light-brown text-xs transition ease-in-out hover:-translate-1 hover:scale-110 duration-200"
           type="button"
           onClick={() => dispatch(clearCompleted())}
         >

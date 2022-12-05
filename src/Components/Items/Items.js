@@ -1,5 +1,3 @@
-import { useState } from "react";
-import "./Items.css";
 import { changeStatus, deleteItem } from "../../redux/todolist";
 import { useDispatch } from "react-redux";
 
@@ -15,7 +13,7 @@ const Items = ({ dataList, allOrActive }) => {
         </li>
         {allOrActive === "All" ?
           dataList.map((item, index) => (
-            <li key={index} className={`${item.status === "done" && 'bg-gray-300'} p-3 pr-5 pl-10`}>
+            <li key={index} className={`${item.status === "done" && 'bg-gray-300'} p-3 pr-5 pl-10 transition ease-in-out hover:-translate-y-1 hover:scale-103 hover:bg-indigo-300 duration-200`}>
               <div className="flex justify-between items-center">
                 <div className="flex items-center">
                   <input className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 cursor-pointer"
@@ -37,7 +35,7 @@ const Items = ({ dataList, allOrActive }) => {
             </li>
           )) : (
             dataList.filter(item => item.status === "active").map((item, index) => (
-              <li key={index} className={`${item.status === "done" && 'bg-gray-300'} p-3 pr-5 pl-10`}>
+              <li key={index} className={`${item.status === "done" && 'bg-gray-300'} p-3 pr-5 pl-10 transition ease-in-out hover:-translate-y-1 hover:scale-103 hover:bg-indigo-300 duration-200`}>
                 <div className="flex justify-between items-center">
                   <div className="flex items-center">
                     <input className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 cursor-pointer"

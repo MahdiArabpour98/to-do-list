@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./Header.css";
 import { addItem } from "../../redux/todolist";
 import { useDispatch } from "react-redux";
 
@@ -42,7 +41,9 @@ const Header = () => {
               />
             </div>
             <div className="">
-              <button className="shadow bg-btn-background hover:bg-slate-400 hover:text-second-white focus:shadow-outline focus:outline-none text-light-brown py-2 px-4 rounded md:rounded-l-none mt-3 md:mt-0" type="Submit">
+              <button className="shadow bg-btn-background hover:bg-slate-400 hover:text-second-white focus:shadow-outline focus:outline-none text-light-brown py-2 px-4 rounded md:rounded-l-none mt-3 md:mt-0 transition ease-in-out duration-300"
+                type="Submit"
+              >
                 Submit
               </button>
             </div>

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import './App.css';
 import { Header, Items, Footer } from "./Components/index";
 import { useSelector } from 'react-redux';
 
